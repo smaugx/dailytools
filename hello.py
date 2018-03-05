@@ -14,6 +14,7 @@ def hello():
 
 #往文件里写100行 hello world
 def dumphello(filename):
+  #打开文件，写
   with open(filename,'w') as hellofile:
     for i in xrange(0,100,1):
       hellofile.write("hello world\n")
@@ -51,7 +52,7 @@ if __name__ == "__main__":
 
 
   print "call dumphello()"
-  filename = "/root/temp/abc.txt"
+  filename = "./abc.txt"
   dumphello(filename)
   print "finish call dumphello()"
   
