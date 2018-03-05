@@ -1,0 +1,138 @@
+ 
+[randread.log]
+fio-4k: (groupid=0, jobs=20): err= 0: pid=12277: Fri Mar  2 14:00:03 2018
+  read : io=19412KB, bw=1864.6KB/s, iops=437 , runt= 10411msec
+fio-8k: (groupid=1, jobs=20): err= 0: pid=12302: Fri Mar  2 14:00:03 2018
+  read : io=38096KB, bw=3735.3KB/s, iops=437 , runt= 10199msec
+fio-16k: (groupid=2, jobs=20): err= 0: pid=12322: Fri Mar  2 14:00:03 2018
+  read : io=73712KB, bw=7183.8KB/s, iops=419 , runt= 10261msec
+fio-32k: (groupid=3, jobs=20): err= 0: pid=12342: Fri Mar  2 14:00:03 2018
+  read : io=143168KB, bw=13831KB/s, iops=403 , runt= 10351msec
+fio-64k: (groupid=4, jobs=20): err= 0: pid=12362: Fri Mar  2 14:00:03 2018
+  read : io=268416KB, bw=26248KB/s, iops=380 , runt= 10226msec
+fio-128k: (groupid=5, jobs=20): err= 0: pid=12382: Fri Mar  2 14:00:03 2018
+  read : io=477696KB, bw=46482KB/s, iops=333 , runt= 10277msec
+fio-256k: (groupid=6, jobs=20): err= 0: pid=12402: Fri Mar  2 14:00:03 2018
+  read : io=798720KB, bw=76675KB/s, iops=270 , runt= 10417msec
+fio-512k: (groupid=7, jobs=20): err= 0: pid=12423: Fri Mar  2 14:00:03 2018
+  read : io=1251.6MB, bw=120513KB/s, iops=207 , runt= 10634msec
+fio-1024k: (groupid=8, jobs=20): err= 0: pid=12444: Fri Mar  2 14:00:03 2018
+  read : io=1646.0MB, bw=157996KB/s, iops=126 , runt= 10668msec
+ 
+[randrw.log]
+fio-4k: (groupid=0, jobs=20): err= 0: pid=12065: Fri Mar  2 13:55:51 2018
+  read : io=10392KB, bw=985.22KB/s, iops=230 , runt= 10548msec
+  write: io=11072KB, bw=1049.7KB/s, iops=250 , runt= 10548msec
+fio-8k: (groupid=1, jobs=20): err= 0: pid=12096: Fri Mar  2 13:55:51 2018
+  read : io=21168KB, bw=2043.7KB/s, iops=239 , runt= 10358msec
+  write: io=21144KB, bw=2041.4KB/s, iops=242 , runt= 10358msec
+fio-16k: (groupid=2, jobs=20): err= 0: pid=12117: Fri Mar  2 13:55:51 2018
+  read : io=42128KB, bw=4103.7KB/s, iops=239 , runt= 10266msec
+  write: io=40304KB, bw=3925.1KB/s, iops=233 , runt= 10266msec
+fio-32k: (groupid=3, jobs=20): err= 0: pid=12137: Fri Mar  2 13:55:51 2018
+  read : io=78272KB, bw=7669.3KB/s, iops=223 , runt= 10206msec
+  write: io=78208KB, bw=7662.1KB/s, iops=226 , runt= 10206msec
+fio-64k: (groupid=4, jobs=20): err= 0: pid=12157: Fri Mar  2 13:55:51 2018
+  read : io=150336KB, bw=14520KB/s, iops=210 , runt= 10354msec
+  write: io=144512KB, bw=13957KB/s, iops=205 , runt= 10354msec
+fio-128k: (groupid=5, jobs=20): err= 0: pid=12177: Fri Mar  2 13:55:51 2018
+  read : io=267008KB, bw=25541KB/s, iops=184 , runt= 10454msec
+  write: io=266112KB, bw=25456KB/s, iops=185 , runt= 10454msec
+fio-256k: (groupid=6, jobs=20): err= 0: pid=12197: Fri Mar  2 13:55:51 2018
+  read : io=434944KB, bw=42024KB/s, iops=148 , runt= 10350msec
+  write: io=437760KB, bw=42296KB/s, iops=152 , runt= 10350msec
+fio-512k: (groupid=7, jobs=20): err= 0: pid=12219: Fri Mar  2 13:55:51 2018
+  read : io=613888KB, bw=58238KB/s, iops=99 , runt= 10541msec
+  write: io=642048KB, bw=60910KB/s, iops=105 , runt= 10541msec
+fio-1024k: (groupid=8, jobs=20): err= 0: pid=12239: Fri Mar  2 13:55:51 2018
+  read : io=832512KB, bw=76630KB/s, iops=60 , runt= 10864msec
+  write: io=837632KB, bw=77102KB/s, iops=62 , runt= 10864msec
+ 
+[randwrite.log]
+fio-4k: (groupid=0, jobs=20): err= 0: pid=12471: Fri Mar  2 14:02:45 2018
+  write: io=20508KB, bw=2024.3KB/s, iops=476 , runt= 10131msec
+fio-8k: (groupid=1, jobs=20): err= 0: pid=12496: Fri Mar  2 14:02:45 2018
+  write: io=40120KB, bw=3930.7KB/s, iops=461 , runt= 10207msec
+fio-16k: (groupid=2, jobs=20): err= 0: pid=12516: Fri Mar  2 14:02:45 2018
+  write: io=80096KB, bw=7860.3KB/s, iops=461 , runt= 10190msec
+fio-32k: (groupid=3, jobs=20): err= 0: pid=12537: Fri Mar  2 14:02:45 2018
+  write: io=150368KB, bw=14881KB/s, iops=435 , runt= 10105msec
+fio-64k: (groupid=4, jobs=20): err= 0: pid=12557: Fri Mar  2 14:02:45 2018
+  write: io=290368KB, bw=28727KB/s, iops=419 , runt= 10108msec
+fio-128k: (groupid=5, jobs=20): err= 0: pid=12587: Fri Mar  2 14:02:45 2018
+  write: io=506496KB, bw=49931KB/s, iops=360 , runt= 10144msec
+fio-256k: (groupid=6, jobs=20): err= 0: pid=12610: Fri Mar  2 14:02:45 2018
+  write: io=821760KB, bw=80470KB/s, iops=284 , runt= 10212msec
+fio-512k: (groupid=7, jobs=20): err= 0: pid=12634: Fri Mar  2 14:02:45 2018
+  write: io=1159.6MB, bw=115420KB/s, iops=196 , runt= 10287msec
+fio-1024k: (groupid=8, jobs=20): err= 0: pid=12656: Fri Mar  2 14:02:45 2018
+  write: io=1563.0MB, bw=151478KB/s, iops=119 , runt= 10566msec
+ 
+[read.log]
+fio-4k: (groupid=0, jobs=20): err= 0: pid=12885: Fri Mar  2 14:08:55 2018
+  read : io=380028KB, bw=37969KB/s, iops=9462 , runt= 10009msec
+fio-8k: (groupid=1, jobs=20): err= 0: pid=12905: Fri Mar  2 14:08:55 2018
+  read : io=654272KB, bw=65206KB/s, iops=8120 , runt= 10034msec
+fio-16k: (groupid=2, jobs=20): err= 0: pid=12952: Fri Mar  2 14:08:55 2018
+  read : io=781808KB, bw=77838KB/s, iops=4835 , runt= 10044msec
+fio-32k: (groupid=3, jobs=20): err= 0: pid=12979: Fri Mar  2 14:08:55 2018
+  read : io=742112KB, bw=74070KB/s, iops=2284 , runt= 10019msec
+fio-64k: (groupid=4, jobs=20): err= 0: pid=13001: Fri Mar  2 14:08:55 2018
+  read : io=1939.4MB, bw=197814KB/s, iops=3060 , runt= 10039msec
+fio-128k: (groupid=5, jobs=20): err= 0: pid=13022: Fri Mar  2 14:08:55 2018
+  read : io=2017.7MB, bw=204438KB/s, iops=1567 , runt= 10106msec
+fio-256k: (groupid=6, jobs=20): err= 0: pid=13047: Fri Mar  2 14:08:55 2018
+  read : io=2490.0MB, bw=253078KB/s, iops=958 , runt= 10075msec
+fio-512k: (groupid=7, jobs=20): err= 0: pid=13070: Fri Mar  2 14:08:55 2018
+  read : io=2747.0MB, bw=277491KB/s, iops=512 , runt= 10137msec
+fio-1024k: (groupid=8, jobs=20): err= 0: pid=13095: Fri Mar  2 14:08:55 2018
+  read : io=2931.0MB, bw=294249KB/s, iops=257 , runt= 10200msec
+ 
+[rw.log]
+fio-4k: (groupid=0, jobs=20): err= 0: pid=12683: Fri Mar  2 14:06:21 2018
+  read : io=13992KB, bw=1338.6KB/s, iops=321 , runt= 10457msec
+  write: io=14348KB, bw=1372.1KB/s, iops=327 , runt= 10457msec
+fio-8k: (groupid=1, jobs=20): err= 0: pid=12713: Fri Mar  2 14:06:21 2018
+  read : io=28512KB, bw=2744.5KB/s, iops=328 , runt= 10389msec
+  write: io=27960KB, bw=2691.4KB/s, iops=322 , runt= 10389msec
+fio-16k: (groupid=2, jobs=20): err= 0: pid=12733: Fri Mar  2 14:06:21 2018
+  read : io=70752KB, bw=6985.1KB/s, iops=421 , runt= 10129msec
+  write: io=68784KB, bw=6790.9KB/s, iops=409 , runt= 10129msec
+fio-32k: (groupid=3, jobs=20): err= 0: pid=12753: Fri Mar  2 14:06:21 2018
+  read : io=138944KB, bw=13487KB/s, iops=407 , runt= 10302msec
+  write: io=140000KB, bw=13590KB/s, iops=409 , runt= 10302msec
+fio-64k: (groupid=4, jobs=20): err= 0: pid=12773: Fri Mar  2 14:06:21 2018
+  read : io=268864KB, bw=26136KB/s, iops=393 , runt= 10287msec
+  write: io=267776KB, bw=26031KB/s, iops=392 , runt= 10287msec
+fio-128k: (groupid=5, jobs=20): err= 0: pid=12793: Fri Mar  2 14:06:21 2018
+  read : io=435968KB, bw=42864KB/s, iops=320 , runt= 10171msec
+  write: io=439552KB, bw=43216KB/s, iops=322 , runt= 10171msec
+fio-256k: (groupid=6, jobs=20): err= 0: pid=12814: Fri Mar  2 14:06:21 2018
+  read : io=711936KB, bw=69033KB/s, iops=254 , runt= 10313msec
+  write: io=703744KB, bw=68239KB/s, iops=252 , runt= 10313msec
+fio-512k: (groupid=7, jobs=20): err= 0: pid=12834: Fri Mar  2 14:06:21 2018
+  read : io=887808KB, bw=86700KB/s, iops=154 , runt= 10240msec
+  write: io=947712KB, bw=92550KB/s, iops=166 , runt= 10240msec
+fio-1024k: (groupid=8, jobs=20): err= 0: pid=12857: Fri Mar  2 14:06:21 2018
+  read : io=1451.0MB, bw=141994KB/s, iops=123 , runt= 10464msec
+  write: io=1460.0MB, bw=142875KB/s, iops=125 , runt= 10464msec
+ 
+[write.log]
+fio-4k: (groupid=0, jobs=20): err= 0: pid=13128: Fri Mar  2 14:12:22 2018
+  write: io=210640KB, bw=21041KB/s, iops=5230 , runt= 10011msec
+fio-8k: (groupid=1, jobs=20): err= 0: pid=13156: Fri Mar  2 14:12:22 2018
+  write: io=287536KB, bw=28696KB/s, iops=3557 , runt= 10020msec
+fio-16k: (groupid=2, jobs=20): err= 0: pid=13184: Fri Mar  2 14:12:22 2018
+  write: io=597872KB, bw=59710KB/s, iops=3701 , runt= 10013msec
+fio-32k: (groupid=3, jobs=20): err= 0: pid=13204: Fri Mar  2 14:12:22 2018
+  write: io=795264KB, bw=79249KB/s, iops=2446 , runt= 10035msec
+fio-64k: (groupid=4, jobs=20): err= 0: pid=13224: Fri Mar  2 14:12:22 2018
+  write: io=700096KB, bw=66886KB/s, iops=1016 , runt= 10467msec
+fio-128k: (groupid=5, jobs=20): err= 0: pid=13244: Fri Mar  2 14:12:22 2018
+  write: io=760064KB, bw=75187KB/s, iops=557 , runt= 10109msec
+fio-256k: (groupid=6, jobs=20): err= 0: pid=13264: Fri Mar  2 14:12:22 2018
+  write: io=1039.3MB, bw=103662KB/s, iops=375 , runt= 10266msec
+fio-512k: (groupid=7, jobs=20): err= 0: pid=13286: Fri Mar  2 14:12:22 2018
+  write: io=1326.0MB, bw=131165KB/s, iops=227 , runt= 10352msec
+fio-1024k: (groupid=8, jobs=20): err= 0: pid=13307: Fri Mar  2 14:12:22 2018
+  write: io=2015.0MB, bw=197224KB/s, iops=163 , runt= 10462msec
