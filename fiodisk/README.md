@@ -46,4 +46,6 @@ $ sh do.sh
 
 
 # 性能曲线
-使用 highcharts 进行数据可视化。
+后端使用 python 清洗数据，存入 redis 永久保存，前端使用 highcharts 进行数据可视化。
+
+具体请看 test 目录，test/ssd 和 test/sata 是 fio  获得的原始数据; data-clean 目录是数据清洗脚本。

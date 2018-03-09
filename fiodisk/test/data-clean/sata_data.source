@@ -1,0 +1,138 @@
+
+[randread.log]
+fio-4k:
+read : io=19412KB, bw=1864.6KB/s, iops=437
+fio-8k:
+read : io=38096KB, bw=3735.3KB/s, iops=437
+fio-16k:
+read : io=73712KB, bw=7183.8KB/s, iops=419
+fio-32k:
+read : io=143168KB, bw=13831KB/s, iops=403
+fio-64k:
+read : io=268416KB, bw=26248KB/s, iops=380
+fio-128k:
+read : io=477696KB, bw=46482KB/s, iops=333
+fio-256k:
+read : io=798720KB, bw=76675KB/s, iops=270
+fio-512k:
+read : io=1251.6MB, bw=120513KB/s, iops=207
+fio-1024k:
+read : io=1646.0MB, bw=157996KB/s, iops=126
+
+[randrw.log]
+fio-4k:
+read : io=10392KB, bw=985.22KB/s, iops=230
+write: io=11072KB, bw=1049.7KB/s, iops=250
+fio-8k:
+read : io=21168KB, bw=2043.7KB/s, iops=239
+write: io=21144KB, bw=2041.4KB/s, iops=242
+fio-16k:
+read : io=42128KB, bw=4103.7KB/s, iops=239
+write: io=40304KB, bw=3925.1KB/s, iops=233
+fio-32k:
+read : io=78272KB, bw=7669.3KB/s, iops=223
+write: io=78208KB, bw=7662.1KB/s, iops=226
+fio-64k:
+read : io=150336KB, bw=14520KB/s, iops=210
+write: io=144512KB, bw=13957KB/s, iops=205
+fio-128k:
+read : io=267008KB, bw=25541KB/s, iops=184
+write: io=266112KB, bw=25456KB/s, iops=185
+fio-256k:
+read : io=434944KB, bw=42024KB/s, iops=148
+write: io=437760KB, bw=42296KB/s, iops=152
+fio-512k:
+read : io=613888KB, bw=58238KB/s, iops=99
+write: io=642048KB, bw=60910KB/s, iops=105
+fio-1024k:
+read : io=832512KB, bw=76630KB/s, iops=60
+write: io=837632KB, bw=77102KB/s, iops=62
+
+[randwrite.log]
+fio-4k:
+write: io=20508KB, bw=2024.3KB/s, iops=476
+fio-8k:
+write: io=40120KB, bw=3930.7KB/s, iops=461
+fio-16k:
+write: io=80096KB, bw=7860.3KB/s, iops=461
+fio-32k:
+write: io=150368KB, bw=14881KB/s, iops=435
+fio-64k:
+write: io=290368KB, bw=28727KB/s, iops=419
+fio-128k:
+write: io=506496KB, bw=49931KB/s, iops=360
+fio-256k:
+write: io=821760KB, bw=80470KB/s, iops=284
+fio-512k:
+write: io=1159.6MB, bw=115420KB/s, iops=196
+fio-1024k:
+write: io=1563.0MB, bw=151478KB/s, iops=119
+
+[read.log]
+fio-4k:
+read : io=380028KB, bw=37969KB/s, iops=9462
+fio-8k:
+read : io=654272KB, bw=65206KB/s, iops=8120
+fio-16k:
+read : io=781808KB, bw=77838KB/s, iops=4835
+fio-32k:
+read : io=742112KB, bw=74070KB/s, iops=2284
+fio-64k:
+read : io=1939.4MB, bw=197814KB/s, iops=3060
+fio-128k:
+read : io=2017.7MB, bw=204438KB/s, iops=1567
+fio-256k:
+read : io=2490.0MB, bw=253078KB/s, iops=958
+fio-512k:
+read : io=2747.0MB, bw=277491KB/s, iops=512
+fio-1024k:
+read : io=2931.0MB, bw=294249KB/s, iops=257
+
+[rw.log]
+fio-4k:
+read : io=13992KB, bw=1338.6KB/s, iops=321
+write: io=14348KB, bw=1372.1KB/s, iops=327
+fio-8k:
+read : io=28512KB, bw=2744.5KB/s, iops=328
+write: io=27960KB, bw=2691.4KB/s, iops=322
+fio-16k:
+read : io=70752KB, bw=6985.1KB/s, iops=421
+write: io=68784KB, bw=6790.9KB/s, iops=409
+fio-32k:
+read : io=138944KB, bw=13487KB/s, iops=407
+write: io=140000KB, bw=13590KB/s, iops=409
+fio-64k:
+read : io=268864KB, bw=26136KB/s, iops=393
+write: io=267776KB, bw=26031KB/s, iops=392
+fio-128k:
+read : io=435968KB, bw=42864KB/s, iops=320
+write: io=439552KB, bw=43216KB/s, iops=322
+fio-256k:
+read : io=711936KB, bw=69033KB/s, iops=254
+write: io=703744KB, bw=68239KB/s, iops=252
+fio-512k:
+read : io=887808KB, bw=86700KB/s, iops=154
+write: io=947712KB, bw=92550KB/s, iops=166
+fio-1024k:
+read : io=1451.0MB, bw=141994KB/s, iops=123
+write: io=1460.0MB, bw=142875KB/s, iops=125
+
+[write.log]
+fio-4k:
+write: io=210640KB, bw=21041KB/s, iops=5230
+fio-8k:
+write: io=287536KB, bw=28696KB/s, iops=3557
+fio-16k:
+write: io=597872KB, bw=59710KB/s, iops=3701
+fio-32k:
+write: io=795264KB, bw=79249KB/s, iops=2446
+fio-64k:
+write: io=700096KB, bw=66886KB/s, iops=1016
+fio-128k:
+write: io=760064KB, bw=75187KB/s, iops=557
+fio-256k:
+write: io=1039.3MB, bw=103662KB/s, iops=375
+fio-512k:
+write: io=1326.0MB, bw=131165KB/s, iops=227
+fio-1024k:
+write: io=2015.0MB, bw=197224KB/s, iops=163
