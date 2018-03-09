@@ -42,7 +42,7 @@ randread.log  randrw.log  randwrite.log  read.log  rw.log  write.log
 ```
 $ sh do.sh
 ```
-清理后的数据保存在文件名为 ret3 的文件中。
+清理后的数据保存在文件名为 [ret3](https://github.com/smaugx/dailydemo/blob/master/fiodisk/test/ssd/ret3) 的文件中。
 
 
 # 性能曲线
