@@ -7,30 +7,55 @@ import time
 
 filename = '/newadd/bandwidth.log'
 
-def get_rx():
-  ethrs = 0
+'''
+[root@~]$ cat /proc/net/dev
+Inter-|   Receive                                                |  Transmit
+ face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed
+    lo: 1144779885672 14057281982    0    0    0     0          0         0 1144779885672 14057281982    0    0    0     0       0          0
+  eth0:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0
+  eth1:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0
+  eth2: 26686495240 203608963    0    0    0     0          0         1 78529414436 193724479    0    0    0     0       0          0
+  eth3: 10038847365 82467612    0    0    0     0          0         0 26209215795 64571217    0    0    0     0       0          0
+ bond0: 36725342605 286076575    0    0    0     0          0         1 104738630231 258295696    0    0    0     0       0          0
+'''
+
+def get_rx(interface = 'eth0'):
+  rsbytes = [] 
   cmd = 'cat /proc/net/dev'
   r = os.popen(cmd).readlines()
   if len(r) < 4:
     print "error: can't find eth interface"
     return ethrs
-  ethr = r[3] #可能是 eth0,也可能是其他的，具体可以修改这里实现探测不同的网卡
-  #ethrs表示接收到的字节数
-  ethrs = int(ethr.split()[1])    # 接收字节总数
-  return ethrs
+  interface_dict = {}
+  for i in xrange(2,len(r),1): #从 lo 开始
+    interface_name = r[i].split()[0].split(':')[0]
+    interface_dict[interface_name] = i
+
+  if interface in interface_dict:
+    position = interface_dict.get(interface)
+    recvbytes = r[position].split()[1]
+    sendbytes = r[position].split()[9]
+    rsbytes.append(recvbytes,sendbytes)
+
+  return rsbytes 
 
 
-def iftop_eth0():
+def iftop_interface(interface = 'eth0'):
   begin = int(time.time())
-  beginrx = get_rx()
+  beginrs = get_rx(interface)
+  if not beginrs:
+    print 'error: can not find interface %s' % interface
+    return 
   while True:
     time.sleep(2)
-    endrx = get_rx()
+    endrs = get_rx()
     end = int(time.time())
-    rxrate = float((endrx - beginrx)) / (end - begin)  * 8 
+    rxrate = float((endrs[0] - beginrs[0])) / (end - begin)  * 8 
+    sxrate = float((endrs[1] - beginrs[1])) / (end - begin)  * 8 
     tl = time.localtime(end)
     date = time.strftime('%m-%d %H:%M:%S', tl)
-    cout = "%s  rx(rate) = %s Mbps\n" % (date,rxrate / 1000000)
+    cout = "%s  recv(rate) = %s Mbps\n" % (date,rxrate / 1000000)
+    cout = "%s  send(rate) = %s Mbps\n" % (date,sxrate / 1000000)
     
     fout = open(filename,'a')
     fout.write(cout)
@@ -43,4 +68,4 @@ def iftop_eth0():
 
 
 if __name__ == "__main__":
-  iftop_eth0()
+  iftop_interface('eth0')
