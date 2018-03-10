@@ -26,7 +26,7 @@ def get_rx(interface = 'eth0'):
   r = os.popen(cmd).readlines()
   if len(r) < 4:
     print "error: can't find eth interface"
-    return ethrs
+    return rsbytes 
   interface_dict = {}
   for i in xrange(2,len(r),1): #从 lo 开始
     interface_name = r[i].split()[0].split(':')[0]
