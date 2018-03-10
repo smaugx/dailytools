@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #-*- coding:utf-8 -*-
-#脚本探测网卡带宽,循环输出
+#脚本探测网卡流入带宽,循环输出
 
 import os
 import time
@@ -14,9 +14,9 @@ def get_rx():
   if len(r) < 4:
     print "error: can't find eth interface"
     return ethrs
-  ethr = r[3]
+  ethr = r[3] #可能是 eth0,也可能是其他的，具体可以修改这里实现探测不同的网卡
   #ethrs表示接收到的字节数
-  ethrs = int(ethr.split()[1])
+  ethrs = int(ethr.split()[1])    # 接收字节总数
   return ethrs
 
 
