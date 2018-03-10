@@ -4,8 +4,9 @@
 
 import os
 import time
+import pdb
 
-filename = '/newadd/bandwidth.log'
+filename = './bandwidth.log'
 
 '''
 [root@~]$ cat /proc/net/dev
@@ -35,7 +36,8 @@ def get_rx(interface = 'eth0'):
     position = interface_dict.get(interface)
     recvbytes = r[position].split()[1]
     sendbytes = r[position].split()[9]
-    rsbytes.append(recvbytes,sendbytes)
+    rsbytes.append(int(recvbytes))
+    rsbytes.append(int(sendbytes))
 
   return rsbytes 
 
@@ -48,24 +50,23 @@ def iftop_interface(interface = 'eth0'):
     return 
   while True:
     time.sleep(2)
-    endrs = get_rx()
+    endrs = get_rx(interface)
     end = int(time.time())
     rxrate = float((endrs[0] - beginrs[0])) / (end - begin)  * 8 
     sxrate = float((endrs[1] - beginrs[1])) / (end - begin)  * 8 
     tl = time.localtime(end)
     date = time.strftime('%m-%d %H:%M:%S', tl)
-    cout = "%s  recv(rate) = %s Mbps\n" % (date,rxrate / 1000000)
-    cout = "%s  send(rate) = %s Mbps\n" % (date,sxrate / 1000000)
+    cout = "%s  [recv(rate) = %s Mbps] [send(rate) = %s Mbps] \n" % (date,rxrate / 1000000,sxrate / 1000000)
     
     fout = open(filename,'a')
     fout.write(cout)
     fout.close()
     
-    #print cout
+    print cout
     
     #重新赋值，进入再次循环
-    begin,beginrx = end,endrx
+    begin,beginrs = end,endrs
 
 
 if __name__ == "__main__":
-  iftop_interface('eth0')
+  iftop_interface('ens33')
