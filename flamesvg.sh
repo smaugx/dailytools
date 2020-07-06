@@ -14,6 +14,7 @@ if [  $1 ]; then
     echo "perf record time is ${record_time}"
 fi
 
+rm -rf perf.*
 echo_and_run echo "sudo perf record --call-graph dwarf -a sleep ${record_time}" |bash -
 echo_and_run echo "sudo perf script -i perf.data > perf.unfold" |bash -
 echo_and_run echo "./FlameGraph/stackcollapse-perf.pl perf.unfold > perf.folded" |bash -
