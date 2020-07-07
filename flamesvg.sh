@@ -50,4 +50,4 @@ if [  $1 = 'all' ]; then
 fi
 
 
-echo "error param, support ./flamesvg.sh [data|svg]"
+echo "error param, support ./flamesvg.sh [data|svg|all]"
