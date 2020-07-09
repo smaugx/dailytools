@@ -1,6 +1,20 @@
 #!/usr/bin/env bash
 echo_and_run() { echo "$*" ; "$@" ; }
 
+params_num=$#
+
+if [  $# -lt 1 ]; then
+    echo "error param"
+    echo "Usage: ./flamesvg.sh [command]"
+    echo ""
+    echo "     record       using 'perf record' to generate perf.data"
+    echo "     svg          after using [record] command, than using [svg] to generate flamegraph perf.svg"
+    echo "     txt          after using [record] command, than using [txt] to generate cpu-percentage of symbol(function) perf_symbol.data"
+    echo "     all_svg      equal to [record] + [svg] command"
+    echo "     all_txt      equal to [record] + [txt] command"
+    exit -1
+fi
+
 if [ ! -d "FlameGraph" ]; then
     echo_and_run echo "sudo yum install perf -y" |bash -
     echo_and_run echo "sudo yum install perf -y" |bash -
