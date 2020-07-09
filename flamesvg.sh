@@ -8,7 +8,7 @@ if [ ! -d "FlameGraph" ]; then
     echo_and_run echo "git clone https://github.com/brendangregg/FlameGraph" |bash -
 fi
 
-if [  $1 = 'data' ]; then
+if [  $1 = 'record' ]; then
     record_time=10
     if [  $2 ]; then
         record_time=$2
@@ -30,7 +30,16 @@ if [  $1 = 'svg' ]; then
     exit 0
 fi
 
-if [  $1 = 'all' ]; then
+if [  $1 = 'txt' ]; then
+    echo_and_run echo "sudo perf report --no-children --sort comm,symbol > perf_symbol.data" |bash -
+
+    echo "perf_symbol(function).data generated"
+    echo_and_run echo "ls perf_symbol.data" |bash -
+    exit 0
+fi
+
+
+if [  $1 = 'all_svg' ]; then
     record_time=10
     if [  $2 ]; then
         record_time=$2
@@ -49,5 +58,29 @@ if [  $1 = 'all' ]; then
     exit 0
 fi
 
+if [  $1 = 'all_txt' ]; then
+    record_time=10
+    if [  $2 ]; then
+        record_time=$2
+        echo "perf record time is ${record_time}"
+    fi
 
-echo "error param, support ./flamesvg.sh [data|svg|all]"
+    rm -rf perf.*
+    echo_and_run echo "sudo perf record --call-graph dwarf -a sleep ${record_time}" |bash -
+
+    echo_and_run echo "sudo perf report --no-children --sort comm,symbol > perf_symbol.data" |bash -
+
+    echo "perf_symbol(function).data generated"
+    echo_and_run echo "ls perf_symbol.data" |bash -
+    exit 0
+fi
+
+
+echo "error param"
+echo "Usage: ./flamesvg.sh [command]"
+echo ""
+echo "     record       using 'perf record' to generate perf.data"
+echo "     svg          after using [record] command, than using [svg] to generate flamegraph perf.svg"
+echo "     txt          after using [record] command, than using [txt] to generate cpu-percentage of symbol(function) perf_symbol.data"
+echo "     all_svg      equal to [record] + [svg] command"
+echo "     all_txt      equal to [record] + [txt] command"
