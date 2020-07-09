@@ -68,7 +68,6 @@ if [  $1 = 'all_txt' ]; then
     rm -rf perf.*
     echo_and_run echo "sudo perf record --call-graph dwarf -a sleep ${record_time}" |bash -
     echo_and_run echo "ls -al perf.data" |bash -
-    echo_and_run echo "ls perf.data" |bash -
     echo_and_run echo "sudo perf report -i perf.data --no-children --sort comm,symbol > perf_symbol.data" |bash -
 
     echo "perf_symbol(function).data generated"
