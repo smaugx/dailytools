@@ -45,7 +45,7 @@ if [  $1 = 'svg' ]; then
 fi
 
 if [  $1 = 'txt' ]; then
-    echo_and_run echo "sudo perf report --no-children --sort comm,symbol > perf_symbol.data" |bash -
+    echo_and_run echo "sudo perf report -i perf.data --no-children --sort comm,symbol > perf_symbol.data" |bash -
 
     echo "perf_symbol(function).data generated"
     echo_and_run echo "ls perf_symbol.data" |bash -
