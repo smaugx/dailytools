@@ -71,3 +71,29 @@ sh flamesvg.sh all_txt
 ```
 
 
+# nat_birth_attach.py
+生日攻击算法的实现和验证，为 p2p 打洞（对称性）提供理论基础（端口预测）。
+
+```
+p: 0.507297 > rate:0.5 k: 23 success
+when total_samples is 365, if request for rate greater than 0.5, then try at least 23 times is ok
+
+p: 0.500722 > rate:0.5 k: 302 success
+when total_samples is 65536, if request for rate greater than 0.5, then try at least 302 times is ok
+
+p: 0.701186 > rate:0.7 k: 398 success
+when total_samples is 65536, if request for rate greater than 0.7, then try at least 398 times is ok
+
+p: 0.801039 > rate:0.8 k: 460 success
+when total_samples is 65536, if request for rate greater than 0.8, then try at least 460 times is ok
+
+p: 0.900755 > rate:0.9 k: 550 success
+when total_samples is 65536, if request for rate greater than 0.9, then try at least 550 times is ok
+
+p: 0.990025 > rate:0.99 k: 770 success
+when total_samples is 64512, if request for rate greater than 0.99, then try at least 770 times is ok
+```
+
+
+打开文件直接修改 total_samples 和 rate 值就可以验证在总样本量为  total_samples 的场景下，当需要满足至少两个样本一样的概率大于等于rate值需要的尝试次数
+。
