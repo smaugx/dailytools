@@ -33,7 +33,7 @@ async def MinifyHtmlUrl(async_session, html_url):
         async with async_session.get(url,  headers = myheaders) as r:
             if r.status != 200:
                 print('http get request failed with code:{0}'.format(r.status))
-                return response
+                return minified_html
 
             content = await r.text()
             content = json.loads(content)
@@ -74,7 +74,7 @@ async def MinifyHtmlText(async_session, html_content):
         async with async_session.post(url,  headers = myheaders, data = payload) as r:
             if r.status != 200:
                 print('http get request failed with code:{0}'.format(r.status))
-                return response
+                return minified_html
 
             content = await r.text()
             content = json.loads(content)
@@ -113,8 +113,10 @@ the error log for details.</p>
 </html>"""
         await MinifyHtmlText(async_session, json.dumps(html_content))
 
+        print("\n")
+        
         html_url = 'http://free-phone.online/hk-phone/'
-        #await MinifyHtmlUrl(async_session, html_url)
+        await MinifyHtmlUrl(async_session, html_url)
 
 
 if __name__ == '__main__':
