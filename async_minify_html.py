@@ -41,7 +41,6 @@ async def MinifyHtmlUrl(async_session, html_url):
     except Exception as e:
         print('catch exception: {0}'.format(e))
 
-    print(minified_html)
     return minified_html
 
 
@@ -67,7 +66,7 @@ async def MinifyHtmlText(async_session, html_content):
             }
 
     payload = {
-            'json': html_content,
+            'json': json.dumps(html_content),
             }
     minified_html = ''
     try:
@@ -82,11 +81,41 @@ async def MinifyHtmlText(async_session, html_content):
     except Exception as e:
         print('catch exception: {0}'.format(e))
 
-    print(minified_html)
     return minified_html
 
+async def dump_minify_html(minified_html, dest_file):
+    with open(dest_file, 'w') as destF:
+        destF.write(minified_html)
+    return
 
-async def run():
+async def MinifyHtmlTextDir(async_session, src_dir, dest_dir):
+    for item in os.listdir(src_dir):
+        abs_item  = os.path.join(src_dir, item)
+        new_abs_item = os.path.join(dest_dir, item)
+        if os.path.isdir(abs_item):
+            if not os.path.exists(new_abs_item):
+                os.makedirs(new_abs_item)
+            await MinifyHtmlTextDir(async_session, abs_item, new_abs_item)
+        else:
+            if not item.endswith('.html'):
+                continue
+            html_content = ''
+            with open(abs_item, 'r') as srcF:
+                html_content = srcF.read()
+
+            minified_html = await MinifyHtmlText(async_session, html_content)
+            if not minified_html:
+                print("#################################### html: {0} minify failed".format(abs_item))
+            else:
+                print("html: {0} minify success".format(abs_item))
+                await dump_minify_html(minified_html, new_abs_item)
+
+    print("minify-html all done")
+    return
+
+
+
+async def run_test():
     async with aiohttp.ClientSession(
             connector=aiohttp.TCPConnector(ssl=False, enable_cleanup_closed = True),
             timeout=aiohttp.ClientTimeout(total=60)) as async_session:
@@ -114,9 +143,19 @@ the error log for details.</p>
         await MinifyHtmlText(async_session, json.dumps(html_content))
 
         print("\n")
-        
+
         html_url = 'http://free-phone.online/hk-phone/'
         await MinifyHtmlUrl(async_session, html_url)
+
+
+async def run():
+    async with aiohttp.ClientSession(
+            connector=aiohttp.TCPConnector(ssl=False, enable_cleanup_closed = True),
+            timeout=aiohttp.ClientTimeout(total=60)) as async_session:
+        src_dir = "./website_src/sms1"
+        dest_dir = "./website_src/sms1"
+        await MinifyHtmlTextDir(async_session, src_dir, dest_dir)
+
 
 
 if __name__ == '__main__':
