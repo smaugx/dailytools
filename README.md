@@ -103,17 +103,17 @@ when total_samples is 64512, if request for rate greater than 0.99, then try at 
 调用 iftop 命令从 remote_ip 维度统计发送接收流量，脚本中限定了只统计本地 80 和 443 端口，实际场景下可以修改成其他过滤条件或者去掉。
 
 ```
-remote_ip:124.160.217.128 send:1450 Kb/s recv:7 Kb/s
-remote_ip:124.160.217.128 send:3160 Kb/s recv:20 Kb/s
-remote_ip:124.160.217.128 send:2407 Kb/s recv:26 Kb/s
-remote_ip:124.160.217.128 send:2696 Kb/s recv:25 Kb/s
-remote_ip:124.160.217.128 send:2729 Kb/s recv:25 Kb/s
-remote_ip:124.160.217.128 send:2852 Kb/s recv:26 Kb/s
-remote_ip:124.160.217.128 send:2650 Kb/s recv:23 Kb/s
-remote_ip:124.160.217.128 send:2539 Kb/s recv:25 Kb/s
-remote_ip:124.160.217.128 send:2362 Kb/s recv:24 Kb/s
-remote_ip:124.160.217.128 send:2741 Kb/s recv:24 Kb/s
-remote_ip:124.160.217.128 send:2667 Kb/s recv:23 Kb/s
-remote_ip:124.160.217.128 send:2679 Kb/s recv:21 Kb/s
-remote_ip:124.160.217.128 send:2540 Kb/s recv:28 Kb/s
+remote_ip:124.160.217.1 send:1450 Kb/s recv:7 Kb/s
+remote_ip:124.160.217.1 send:3160 Kb/s recv:20 Kb/s
+remote_ip:124.160.217.1 send:2407 Kb/s recv:26 Kb/s
+remote_ip:124.160.217.1 send:2696 Kb/s recv:25 Kb/s
+remote_ip:124.160.217.2 send:2729 Kb/s recv:25 Kb/s
+remote_ip:124.160.217.3 send:2852 Kb/s recv:26 Kb/s
+remote_ip:124.160.217.4 send:2650 Kb/s recv:23 Kb/s
+remote_ip:124.160.217.1 send:2539 Kb/s recv:25 Kb/s
+remote_ip:124.160.217.3 send:2362 Kb/s recv:24 Kb/s
+remote_ip:124.160.217.2 send:2741 Kb/s recv:24 Kb/s
+remote_ip:124.160.217.4 send:2667 Kb/s recv:23 Kb/s
+remote_ip:124.160.217.2 send:2679 Kb/s recv:21 Kb/s
+remote_ip:124.160.217.1 send:2540 Kb/s recv:28 Kb/s
 ```
