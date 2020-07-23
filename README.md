@@ -117,3 +117,14 @@ remote_ip:124.160.217.4 send:2667 Kb/s recv:23 Kb/s
 remote_ip:124.160.217.2 send:2679 Kb/s recv:21 Kb/s
 remote_ip:124.160.217.1 send:2540 Kb/s recv:28 Kb/s
 ```
+
+
+# mykill
+简单封装了下 kill 命令，本质上是 killall 命令的实现，只不过更加友好一点。
+
+```
+smaug@smaug-VirtualBox:~$ mykill  -h
+error param
+grep all program name  and kill all
+Usage: mykill [program_name] [yes/no]
+```
