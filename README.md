@@ -97,3 +97,34 @@ when total_samples is 64512, if request for rate greater than 0.99, then try at 
 
 打开文件直接修改 total_samples 和 rate 值就可以验证在总样本量为  total_samples 的场景下，当需要满足至少两个样本一样的概率大于等于rate值需要的尝试次数
 。
+
+
+# iftop_remote_ip.py
+调用 iftop 命令从 remote_ip 维度统计发送接收流量，脚本中限定了只统计本地 80 和 443 端口，实际场景下可以修改成其他过滤条件或者去掉。
+
+```
+remote_ip:124.160.217.1 send:1450 Kb/s recv:7 Kb/s
+remote_ip:124.160.217.1 send:3160 Kb/s recv:20 Kb/s
+remote_ip:124.160.217.1 send:2407 Kb/s recv:26 Kb/s
+remote_ip:124.160.217.1 send:2696 Kb/s recv:25 Kb/s
+remote_ip:124.160.217.2 send:2729 Kb/s recv:25 Kb/s
+remote_ip:124.160.217.3 send:2852 Kb/s recv:26 Kb/s
+remote_ip:124.160.217.4 send:2650 Kb/s recv:23 Kb/s
+remote_ip:124.160.217.1 send:2539 Kb/s recv:25 Kb/s
+remote_ip:124.160.217.3 send:2362 Kb/s recv:24 Kb/s
+remote_ip:124.160.217.2 send:2741 Kb/s recv:24 Kb/s
+remote_ip:124.160.217.4 send:2667 Kb/s recv:23 Kb/s
+remote_ip:124.160.217.2 send:2679 Kb/s recv:21 Kb/s
+remote_ip:124.160.217.1 send:2540 Kb/s recv:28 Kb/s
+```
+
+
+# mykill
+简单封装了下 kill 命令，本质上是 killall 命令的实现，只不过更加友好一点。
+
+```
+smaug@smaug-VirtualBox:~$ mykill  -h
+error param
+grep all program name  and kill all
+Usage: mykill [program_name] [yes/no]
+```

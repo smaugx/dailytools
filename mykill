@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+echo_and_run() { echo "$*" ; "$@" ; }
+
+if [  $# -lt 1 ]; then
+    echo "error param"
+    echo "grep all program name  and kill all"
+    echo "Usage: mykill [program_name] [yes/no]"
+    exit -1
+fi
+
+yes_no=no
+
+if [ $1 ]; then
+    if [ $1 = 'help' -o $1 = '-h' -o  $1 = '--help' ]; then
+        echo "error param"
+        echo "grep all program name  and kill all"
+        echo "Usage: mykill [program_name] [yes/no]"
+        exit -1
+    fi
+
+    if [ $2 ]; then
+        yes_no=$2
+    fi
+        echo "fond program:"
+	echo ""
+        echo_and_run echo "ps -ef |grep $1 |grep -v grep |grep -v sh |grep -v bash " |bash -
+        if [ $yes_no = 'no' ]; then
+            echo ""
+            echo "using no, will not kill, just list pids"
+            echo_and_run echo "ps -ef |grep $1 |grep -v grep |grep -v sh |grep -v bash |awk -F ' ' '{print \$2}' " |bash -
+            echo ""
+            echo "done"
+            exit 0
+        fi
+
+        if [ $yes_no = 'yes' ]; then
+            echo ""
+            echo "using yes, will kill pids"
+            ps -ef |grep $1 |grep -v grep |grep -v sh |grep -v bash |awk -F ' ' '{print $2}' |xargs kill -9
+            echo ""
+            echo "done kill"
+            exit 0
+        fi
+else
+    echo $1
+fi
+
+echo "error"
