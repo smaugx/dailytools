@@ -3,6 +3,16 @@ echo_and_run() { echo "$*" ; "$@" ; }
 
 params_num=$#
 
+
+
+osinfo=`awk -F= '/^NAME/{print $2}' /etc/os-release |awk -F ' ' '{print $1}' |awk -F '\"' '{print $2}'`
+
+ubuntu_os="Ubuntu"
+centos_os="CentOS"
+osname_linux="Linux"
+osname_darwin="Darwin"
+
+
 if [  $# -lt 1 ]; then
     echo "error param"
     echo "Usage: ./flamesvg.sh [command]"
@@ -16,10 +26,22 @@ if [  $# -lt 1 ]; then
 fi
 
 if [ ! -d "FlameGraph" ]; then
-    echo_and_run echo "sudo yum install perf -y" |bash -
-    echo_and_run echo "sudo yum install perf -y" |bash -
-    echo_and_run echo "sudo yum install git -y"  |bash -
-    echo_and_run echo "git clone https://github.com/brendangregg/FlameGraph" |bash -
+    if [ $osinfo = ${ubuntu_os} ]
+    then
+        echo "Ubuntu"
+	echo_and_run echo "sudo apt install  linux-tools-common -y" | bash -
+	echo_and_run echo "sudo apt install git  -y" | bash -
+        echo_and_run echo "git clone https://github.com/brendangregg/FlameGraph" |bash -
+    elif [ $osinfo = ${centos_os} ]
+    then
+        echo "Centos"
+        echo_and_run echo "sudo yum install perf -y" |bash -
+        echo_and_run echo "sudo yum install git -y"  |bash -
+        echo_and_run echo "git clone https://github.com/brendangregg/FlameGraph" |bash -
+    else
+        echo "unknow osinfo:$osinfo"
+	exit -1
+    fi
 fi
 
 if [  $1 = 'record' ]; then
